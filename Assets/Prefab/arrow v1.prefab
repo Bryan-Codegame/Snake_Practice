@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8912978878422625552}
   - component: {fileID: -3786886465871436715}
+  - component: {fileID: 4688455854563507498}
   m_Layer: 0
   m_Name: arrow v1
   m_TagString: Untagged
@@ -130,5 +131,18 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!65 &4688455854563507498
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8140981719474960298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.71872425, y: 0.05803907, z: 1.1562643}
+  m_Center: {x: -0.0022323579, y: 0.024600625, z: 0.22993177}

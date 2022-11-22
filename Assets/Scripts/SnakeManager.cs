@@ -80,10 +80,10 @@ public class SnakeManager : MonoBehaviour
         
         MarkersManager markM = snakeBody[snakeBody.Count - 1].GetComponent<MarkersManager>();
         
-        /*if (countUp == 0)
+        if (countUp == 0)
         {
             markM.ClearMarkerList();
-        }*/
+        }
 
         countUp += Time.deltaTime;
         if (countUp >= distanceBetween)
@@ -102,11 +102,8 @@ public class SnakeManager : MonoBehaviour
         }
     }
     
-    void AddBodyPart(GameObject obj, int numberObjects)
+    public void AddBodyPart(GameObject obj)
     {
-        for (int i = 0; i < numberObjects; i++)
-        {
-            bodyParts.Add(obj);
-        }
+        bodyParts.Add(obj);
     }
 }
