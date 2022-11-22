@@ -29,6 +29,7 @@ public class SnakeManager : MonoBehaviour
             CreateBodyParts();
         }
         
+        Debug.Log("Count: "+ countUp);
         Snakemovement();
     }
 
@@ -80,6 +81,7 @@ public class SnakeManager : MonoBehaviour
         
         MarkersManager markM = snakeBody[snakeBody.Count - 1].GetComponent<MarkersManager>();
         
+        //Avoid keeping the same position and rotation reference  
         if (countUp == 0)
         {
             markM.ClearMarkerList();
