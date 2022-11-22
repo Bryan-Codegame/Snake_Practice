@@ -11,6 +11,7 @@ public class SnakeManager : MonoBehaviour
     [SerializeField] List<GameObject> snakeBody = new List<GameObject>();
 
     private float horizontal;
+    private float vertical;
     private float countUp = 0;
 
     // Start is called before the first frame update
@@ -35,11 +36,17 @@ public class SnakeManager : MonoBehaviour
     void Snakemovement()
     {
         horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
         snakeBody[0].GetComponent<Rigidbody>().velocity = snakeBody[0].transform.forward * speed * Time.deltaTime;
         
         if (horizontal != 0)
         {
             snakeBody[0].transform.Rotate(new Vector3(0, turnSpeed * horizontal * Time.deltaTime, 0));
+        }
+
+        if (vertical != 0)
+        {
+            snakeBody[0].transform.Rotate(new Vector3(turnSpeed * vertical * Time.deltaTime, 0, 0));
         }
 
         if (snakeBody.Count > 1)
@@ -92,6 +99,14 @@ public class SnakeManager : MonoBehaviour
             bodyParts.RemoveAt(0);
             temp.GetComponent<MarkersManager>().ClearMarkerList();
             countUp = 0;
+        }
+    }
+    
+    void AddBodyPart(GameObject obj, int numberObjects)
+    {
+        for (int i = 0; i < numberObjects; i++)
+        {
+            bodyParts.Add(obj);
         }
     }
 }
